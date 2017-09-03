@@ -102,16 +102,16 @@ char const*const RED_DELAY_OFF_FILE
 
 /* GREEN LED */
 char const*const GREEN_LED_FILE
-        = "/sys/class/leds/greenled/brightness";
+        = "/sys/class/leds/green/brightness";
 
 char const*const GREEN_TRIGGER_FILE
-        = "/sys/class/leds/greenled/trigger";
+        = "/sys/class/leds/green/trigger";
 
 char const*const GREEN_DELAY_ON_FILE
-        = "/sys/class/leds/greenled/delay_on";
+        = "/sys/class/leds/green/delay_on";
 
 char const*const GREEN_DELAY_OFF_FILE
-        = "/sys/class/leds/greenled/delay_off";
+        = "/sys/class/leds/green/delay_off";
 
 /* BLUE LED */
 char const*const BLUE_LED_FILE
@@ -463,18 +463,25 @@ set_speaker_light_locked(struct light_device_t* dev,
     	red = green = blue = 0;
     }
 
-    blink_red(0, 0, 0);
-    blink_green(0, 0, 0);
-    blink_blue(0, 0, 0);
-
     if (red) {
+        blink_green(0, 0, 0);
+        blink_blue(0, 0, 0);
         blink_red(red, onMS, offMS);
     }
-    if (green) {
+    else if (green) {
+        blink_red(0, 0, 0);
+        blink_blue(0, 0, 0);
         blink_green(green, onMS, offMS);
     }
-    if (blue) {
+    else if (blue) {
+        blink_red(0, 0, 0);
+        blink_green(0, 0, 0);
         blink_blue(blue, onMS, offMS);
+    }
+    else {
+        blink_red(0, 0, 0);
+        blink_green(0, 0, 0);
+        blink_blue(0, 0, 0);
     }
 
     return 0;
@@ -619,3 +626,4 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .author = "MediaTek",
     .methods = &lights_module_methods,
 };
+
