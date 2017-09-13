@@ -130,9 +130,9 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # FM Radio
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
+#PRODUCT_PACKAGES += \
+#    FMRadio \
+#    libfmjni
 
 # GPS
 PRODUCT_COPY_FILES += \
