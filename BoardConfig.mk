@@ -26,7 +26,7 @@ WITH_DEXPREOPT := false
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Link against libxlog
-TARGET_LDPRELOAD := libxlog.so
+TARGET_LDPRELOAD := libxlog.so:libmtk_symbols.so
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MT6572

@@ -16,10 +16,13 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    mt6572_ril.cpp
+    mtk_ui.cpp \
+    mtk_ril.cpp \
+    icu51.c
 
-LOCAL_SHARED_LIBRARIES := libbinder
-LOCAL_MODULE := libmt6572
-LOCAL_MODULE_TAGS := optional
+LOCAL_SHARED_LIBRARIES := libbinder liblog libicuuc libui \
+                          libstagefright
+LOCAL_MODULE := libmtk_symbols
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
 include $(BUILD_SHARED_LIBRARY)
