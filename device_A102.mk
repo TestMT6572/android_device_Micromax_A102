@@ -127,9 +127,9 @@ PRODUCT_PACKAGES += \
     charger_res_images
 
 # FM Radio
-#PRODUCT_PACKAGES += \
-#    FMRadio \
-#    libfmjni
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
 
 # GPS
 PRODUCT_COPY_FILES += \
