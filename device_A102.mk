@@ -32,7 +32,6 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.mt6572 \
     audio_policy.default \
     audio.a2dp.default \
     audio.usb.default \
@@ -44,7 +43,7 @@ PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
     
 # Bluetooth
 PRODUCT_PACKAGES += \
