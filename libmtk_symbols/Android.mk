@@ -20,6 +20,8 @@ LOCAL_SRC_FILES := \
     mtk_wvm.cpp \
     mtk_ui.cpp \
     mtk_ril.cpp \
+	icu51.c \
+	icu53.c \
     icu55.c
 
 LOCAL_SHARED_LIBRARIES := libbinder liblog libicuuc libui libcrypto
